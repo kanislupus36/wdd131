@@ -1,13 +1,27 @@
 /* General styles */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Roboto, sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+main {
+    max-width: 800px; /* Limit width */
+    margin: 0 auto; /* Center main horizontally */
+    padding: 20px;
 }
 
 header {
     background: #211592;
     padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
  
 }
 
@@ -15,27 +29,34 @@ h1 {
     color: white;
 }
 
-.nav {
+h2 {
     display: flex;
-    justify-content: center; /* Center items horizontally */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+}
+
+.nav {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.navli {
+.nav ul {
     margin: 0 15px;
+    list-style: none;
 }
 
-.nava {
+.nav a {
     color: white;
     text-decoration: none;
     padding: 10px 15px;
     transition: background 0.3s;
+    display: block;
+    text-align: center;
 }
 
 /* Hover effect */
-.navhover {
+.nav a:hover {
     background: #000000;
     color: white;
 }
@@ -49,38 +70,49 @@ h1 {
     margin-left: 10px;
 }
 
-/* Main content */
-main {
-    max-width: 1200px; /* Limit width */
-    margin: 0 auto; /* Center main horizontally */
-    padding: 20px;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
-    gap: 20px; /* Space between grid items */
+    gap: 10px; /* Space between grid items */
 }
 
 .gallery {
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     padding: 1rem;
     margin-bottom: 1rem;
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 10px;
   }
+
+  .gallery figure {
+    margin: 0.5rem; /* Add some spacing between figures */
+    flex: 0 1 200px; /* Allow them to grow and shrink but maintain a base size */
+}
+
+.gallery img {
+    max-width: 100%; /* Responsive image */
+}
+
+footer {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
 
 /* Media query for mobile view */
 @media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr; /* One column on mobile */
+    }
+
     .navigation {
         display: none; /* Hide navigation by default */
-        flex-direction: column; /* Stack items vertically */
-        position: absolute; /* Overlay on top of content */
-        top: 50px; /* Adjust based on header height */
-        left: 0;
-        right: 0;
-        background: #555454; /* Background color for menu */
-        z-index: 1000; /* Ensure it appears above content */
+        flex-direction: column; /* Stack items vertically when visible */
     }
 
     .navigation.show {

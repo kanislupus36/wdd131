@@ -23,14 +23,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
-    const navItems = document.getElementById('nav-items');
+    const navItems = document.querySelector('.nav');
 
     hamburger.addEventListener('click', () => {
         navItems.classList.toggle('show'); // Toggle the 'show' class on nav items
-        if (navItems.classList.contains('show')) {
-            hamburger.innerHTML = '✖'; // Change to 'X' when open
-        } else {
-            hamburger.innerHTML = '&#9776;'; // Change back to hamburger icon
-        }
+        hamburger.innerHTML = navItems.classList.contains('show') ? '✖' : '&#9776;'; // Change icon
     });
 });
