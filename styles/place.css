@@ -1,8 +1,8 @@
 :root {
-    --main-bg-color: #f0f8ff; /* Light blue background */
-    --weather-bg-color: rgba(230, 255, 230, 0.8); /* Light green background */
-    --text-color: #0056b3; /* Dark blue for text */
-    --highlight-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    --main-bg-color: #f0f8ff;
+    --weather-bg-color: rgba(230, 255, 230, 0.8);
+    --text-color: #0056b3;
+    --highlight-color: rgba(255, 255, 255, 0.8);
 }
 
 body {

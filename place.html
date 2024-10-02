@@ -7,7 +7,9 @@
     <meta name="description" content="Favorite Place">
     <meta name="author" content="Kadin Adams">
     <link rel="stylesheet" href="styles/place.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <script src="scripts/place.js" defer></script>
 </head>
 <body>
@@ -17,7 +19,6 @@
     <main>
         <div class="hero">
             <picture>
-                <source media="(min-width: 1000px)" srcset="images/hero-large.webp">
                 <source media="(min-width: 500px)" srcset="images/hero-medium.webp">
                 <img src="images/hero-small.webp" alt="Hero Image">
             </picture>
@@ -32,7 +33,7 @@
                     </ul>
                 </div>
                 <div id="weather">
-                    <h2>Weather ⛅</h2>
+                    <h2>Weather</h2>
                     <div id="temperatureDisplay">Temperature: Calculating...</div>
                     <div id="conditionsDisplay">Conditions: Clear</div>
                     <div id="windDisplay">Wind: Calculating...</div>
@@ -41,7 +42,7 @@
             </div>
         </div>
         <div class="mobile-view">
-            <img src="images/weather.svg" alt="Weather Icon" id="weatherIcon" />
+            <img src="images/weather-icon.svg" alt="Weather Icon" id="weatherIcon" />
         </div>
     </main>
     <footer>
