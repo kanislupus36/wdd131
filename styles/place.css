@@ -1,7 +1,8 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+    --main-bg-color: #f0f8ff; /* Light blue background */
+    --weather-bg-color: rgba(230, 255, 230, 0.8); /* Light green background */
+    --text-color: #0056b3; /* Dark blue for text */
+    --highlight-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
 }
 
 body {
@@ -96,6 +97,15 @@ footer {
 
 #weather {
     margin-right: 0;
+}
+
+#weather h2::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 50%;
+    background-color: var(--text-color);
+    margin-top: 0.5rem;
 }
 
 @media (max-width: 768px) {
