@@ -1,0 +1,140 @@
+/* General styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+main {
+    max-width: 800px; /* Limit width */
+    margin: 0 auto; /* Center main horizontally */
+    padding: 20px;
+}
+
+header {
+    background: #211592;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul {
+    margin: 0 15px;
+    list-style: none;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background 0.3s;
+    display: block;
+    text-align: center;
+}
+
+/* Hover effect */
+.nav a:hover {
+    background: #000000;
+    color: white;
+}
+
+/* Hamburger styles */
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 10px; /* Space between grid items */
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 10px;
+  }
+
+  .gallery figure {
+    margin: 0.5rem; /* Add some spacing between figures */
+    flex: 0 1 200px; /* Allow them to grow and shrink but maintain a base size */
+}
+
+.gallery img {
+    max-width: 100%; /* Responsive image */
+}
+
+footer {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+/* Media query for mobile view */
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: 1fr; /* One column on mobile */
+    }
+
+    .navigation {
+        display: none; /* Hide navigation by default */
+        flex-direction: column; /* Stack items vertically when visible */
+    }
+
+    .navigation.show {
+        display: flex; /* Show navigation when toggled */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger button on mobile */
+    }
+}
+
+
+.temple-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 16px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.temple-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
