@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 20px;
+    padding: 20px;
+}
+h1 {
+    color: #c72c41;
+}
+h2 {
+    color: #a81d30;
+}
+p {
+    line-height: 1.6;
+}
+.color-schema {
+    display: flex;
+    margin-top: 20px;
+}
+.color-box {
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+.color-1 {
+    background-color: #c72c41; /* Primary Color */
+}
+.color-2 {
+    background-color: #f7c600; /* Accent Color */
+}
+.typography {
+    margin-top: 20px;
+}
+.wireframe {
+    margin-top: 20px;
+    border: 1px dashed #333;
+    padding: 10px;
+}
