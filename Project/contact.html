@@ -19,21 +19,23 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="parks.html">Parks</a></li>
-                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <h1>Welcome to Utah's National Parks</h1>
         <p>Your guide to the stunning beauty and adventures that await you.</p>
-        <form action="review.html" method="get" id="reviewForm">
-            <label for="productName">Product Name</label>
-            <select id="productName" name="productName" required>
-                <option value="" disabled selected>Select a Product ...</option>
+        <form action="feedback.html" method="get" id="parkFeedbackForm">
+            <h2>Park Experience Feedback</h2>
+            
+            <label for="parkName">Park Name</label>
+            <select id="parkName" name="parkName" required>
+                <option value="" disabled selected>Select a Park ...</option>
             </select>
-    
+        
             <fieldset>
-                <legend>Overall Rating</legend>
+                <legend>Overall Experience Rating</legend>
                 <label>
                     <input type="radio" id="rating1" name="overallRating" value="1" required>
                     ☆
@@ -55,37 +57,37 @@
                     ☆☆☆☆☆
                 </label>
             </fieldset>
-    
-            <label for="installationDate">Date of Installation</label>
-            <input type="date" id="installationDate" name="installationDate" required>
-    
+        
+            <label for="visitDate">Date of Visit</label>
+            <input type="date" id="visitDate" name="visitDate" required>
+        
             <fieldset>
-                <legend>Which features did you find useful in the product? [Check all that apply.]</legend>
+                <legend>Which activities did you enjoy? [Check all that apply.]</legend>
                 <label>
-                    <input type="checkbox" id="feature1" name="usefulFeatures" value="Durability">
-                    Durability
+                    <input type="checkbox" id="activity1" name="enjoyedActivities" value="Hiking">
+                    Hiking
                 </label>
                 <label>
-                    <input type="checkbox" id="feature2" name="usefulFeatures" value="Ease of Use">
-                    Ease of Use
+                    <input type="checkbox" id="activity2" name="enjoyedActivities" value="Camping">
+                    Camping
                 </label>
                 <label>
-                    <input type="checkbox" id="feature3" name="usefulFeatures" value="Performance">
-                    Performance
+                    <input type="checkbox" id="activity3" name="enjoyedActivities" value="Wildlife Watching">
+                    Wildlife Watching
                 </label>
                 <label>
-                    <input type="checkbox" id="feature4" name="usefulFeatures" value="Design">
-                    Design
+                    <input type="checkbox" id="activity4" name="enjoyedActivities" value="Photography">
+                    Photography
                 </label>
             </fieldset>
-    
-            <label for="writtenReview">Written Review (optional)</label>
-            <textarea id="writtenReview" name="writtenReview"></textarea>
-    
+        
+            <label for="writtenReview">Written Feedback (optional)</label>
+            <textarea id="writtenReview" name="writtenReview" rows="4"></textarea>
+        
             <label for="userName">Your Name (optional)</label>
             <input type="text" id="userName" name="userName">
-    
-            <input type="submit" value="Post Review">
+        
+            <input type="submit" value="Submit Feedback">
         </form>
     </main>
     <footer>

@@ -40,7 +40,7 @@ p {
 }
 
 header {
-    background: #4CAF50;
+    background: orangered;
     color: white;
     padding: 10px;
 }
@@ -53,6 +53,10 @@ nav ul {
 nav ul li {
     display: inline;
     margin-right: 15px;
+}
+
+nav a {
+    color: black;
 }
 
 main {

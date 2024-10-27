@@ -14,49 +14,57 @@ function setLastModifiedDate() {
     }
 }
 
-const parks = [
-    { name: 'Zion National Park', description: 'Famous for its stunning canyons.' },
-    { name: 'Arches National Park', description: 'Home to over 2,000 natural stone arches.' },
-];
-
-function displayParks() {
-    const parkList = document.getElementById('park-list');
-    parks.forEach(park => {
-        const li = document.createElement('li');
-        li.textContent = `${park.name}: ${park.description}`;
-        parkList.appendChild(li);
-    });
-}
-
-
 document.addEventListener('DOMContentLoaded', () => {
     setCopyrightYear();
     setLastModifiedDate();
 });
 
 
-document.getElementById('visitor-form').addEventListener('submit', function(event) {
+document.getElementById('parkFeedbackForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    const name = document.getElementById('name').value;
-    localStorage.setItem('visitorName', name);
-    alert(`Hello, ${name}! Welcome to Utah's National Parks.`);
+
+    const parkName = document.getElementById('parkName').value;
+    const overallRating = document.querySelector('input[name="overallRating"]:checked').value;
+    const visitDate = document.getElementById('visitDate').value;
+    const enjoyedActivities = Array.from(document.querySelectorAll('input[name="enjoyedActivities"]:checked')).map(input => input.value);
+    const writtenReview = document.getElementById('writtenReview').value;
+    const userName = document.getElementById('userName').value;
+
+    // Store feedback in localStorage
+    const feedback = {
+        parkName,
+        overallRating,
+        visitDate,
+        enjoyedActivities,
+        writtenReview,
+        userName
+    };
+
+    // Save feedback with a unique key (could use userName and parkName for uniqueness)
+    const feedbackKey = `${userName}-${parkName}-${Date.now()}`;
+    localStorage.setItem(feedbackKey, JSON.stringify(feedback));
+
+    alert(`Thank you for your feedback on ${parkName}!`);
+
+    // Optionally, reset the form after submission
+    this.reset();
 });
 
-const products = [
-    { id: "fc-1888", name: "flux capacitor", averagerating: 4.5 },
-    { id: "fc-2050", name: "power laces", averagerating: 4.7 },
-    { id: "fs-1987", name: "time circuits", averagerating: 3.5 },
-    { id: "ac-2000", name: "low voltage reactor", averagerating: 3.9 },
-    { id: "jj-1969", name: "warp equalizer", averagerating: 5.0 }
+const parks = [
+    { name: 'Zion National Park', description: 'Famous for its stunning canyons.' },
+    { name: 'Bryce Canyon National Park', description: 'Home to unique hoodoos.' },
+    { name: 'Arches National Park', description: 'Home to over 2,000 natural stone arches.' },
+    { name: 'Canyonlands National Park', description: 'Features a vast landscape of canyons.' },
+    { name: 'Capitol Reef National Park', description: 'Known for its Waterpocket Fold.' }
 ];
 
-// Populate the select options
-const productSelect = document.getElementById('productName');
-products.forEach(product => {
+// Populate the park feedback dropdown
+const parkSelect = document.getElementById('parkName');
+parks.forEach(park => {
     const option = document.createElement('option');
-    option.value = product.id;
-    option.textContent = product.name;
-    productSelect.appendChild(option);
+    option.value = park.name;
+    option.textContent = park.name;
+    parkSelect.appendChild(option);
 });
 
 // Increment review count in localStorage on page load
